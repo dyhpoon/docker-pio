@@ -15,6 +15,8 @@ services:
     image: postgres
     environment:
       POSTGRES_DB: pio
+      POSTGRES_PASSWORD: pio
+      POSTGRES_USER: pio
     ports:
       - "5432:5422"
 
