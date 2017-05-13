@@ -21,5 +21,5 @@ services:
       POSTGRES_PASSWORD: pio
       POSTGRES_USER: pio
     ports:
-      - "5432:5422"
+      - "5432:5432"
 
