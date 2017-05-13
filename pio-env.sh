@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+O_FS_BASEDIR/#!/usr/bin/env bash
 #
 # Copy this file as pio-env.sh and edit it for your site's configuration.
 #
