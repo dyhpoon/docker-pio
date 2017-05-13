@@ -18,7 +18,9 @@ RUN curl -o lib/postgresql-42.1.1.jar https://jdbc.postgresql.org/download/postg
 
 # Add pio-env
 COPY pio-env.sh predictionio-0.11.0/conf/
-ENV PIO_CONF_DIR=~/predictionio-0.11.0/conf
+ENV PIO_CONF_DIR=/root/predictionio-0.11.0/conf/
 
 # Install dependencies
 RUN $PIO_HOME/make-distribution.sh -Dscala.version=2.11.8 -Dspark.version=2.1.0
+#RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-1.6.3-bin-hadoop2.6.tgz
+#RUN mkdir predictionio-0.11.0/vendors && tar zxvf spark-1.6.3-bin-hadoop2.6.tgz -C predictionio-0.11.0/vendors
