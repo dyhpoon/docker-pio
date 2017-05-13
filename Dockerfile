@@ -14,8 +14,7 @@ ENV PATH=$PATH:~/PredictionIO-0.11.0-incubating/bin
 ENV PIO_HOME=/root/PredictionIO-0.11.0-incubating
 
 # Install jdbc
-RUN mkdir lib/
-RUN curl -o lib/postgresql-42.1.1.jar https://jdbc.postgresql.org/download/postgresql-42.1.1.jar
+RUN curl -o PredictionIO-0.11.0-incubating/lib/postgresql-42.1.1.jar https://jdbc.postgresql.org/download/postgresql-42.1.1.jar
 
 # Add pio-env
 COPY pio-env.sh PredictionIO-0.11.0-incubating/conf/

@@ -10,12 +10,12 @@ services:
       - "3000:3000"
       - "7070:7070"
     environment:
-      PGSQL_URL: postgres://postgres/pio
+      PGSQL_URL: postgres://postgres:5432/pio
     depends_on:
       - postgres
   
   postgres:
-    image: postgres
+    image: postgres:9.4
     environment:
       POSTGRES_DB: pio
       POSTGRES_PASSWORD: pio
