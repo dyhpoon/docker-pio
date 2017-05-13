@@ -1,0 +1,20 @@
+version: '2'
+services:
+  pio:
+    build:
+      context: .
+    image: pio
+    ports:
+      - "9000:9000"
+      - "3000:3000"
+      - "7070:7070"
+    depends_on:
+      - postgres
+  
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: pio
+    ports:
+      - "5432:5422"
+
