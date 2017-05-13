@@ -1,4 +1,4 @@
-FROM java:7
+FROM java:8
 
 WORKDIR root
 
@@ -14,7 +14,7 @@ ENV PATH=$PATH:~/predictionio-0.11.0/bin
 
 # Install jdbc
 RUN mkdir lib/
-RUN curl -o lib/postgresql-42.1.1.jre7.jar https://jdbc.postgresql.org/download/postgresql-42.1.1.jre7.jar
+RUN curl -o lib/postgresql-42.1.1.jar https://jdbc.postgresql.org/download/postgresql-42.1.1.jar
 
 # Add pio-env
 COPY pio-env.sh predictionio-0.11.0/conf/
