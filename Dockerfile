@@ -13,6 +13,11 @@ RUN tar zxvf predictionio-0.11.0/PredictionIO-0.11.0-incubating.tar.gz
 ENV PATH=$PATH:~/PredictionIO-0.11.0-incubating/bin
 ENV PIO_HOME=/root/PredictionIO-0.11.0-incubating
 
+# Install python and predictionio python SDK
+RUN apt-get install python2.7
+RUN apt-get install python-pip -y
+RUN pip install predictionio
+
 # Install jdbc
 RUN curl -o PredictionIO-0.11.0-incubating/lib/postgresql-42.1.1.jar https://jdbc.postgresql.org/download/postgresql-42.1.1.jar
 
@@ -23,3 +28,9 @@ ENV PIO_CONF_DIR=/root/PredictionIO-0.11.0-incubating/conf
 # Install dependencies
 RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-1.6.3-bin-hadoop2.6.tgz
 RUN mkdir PredictionIO-0.11.0-incubating/vendors && tar zxvf spark-1.6.3-bin-hadoop2.6.tgz -C PredictionIO-0.11.0-incubating/vendors
+RUN rm -f spark-1.6.3-bin-hadoop2.6.tgz
+
+# Install utils
+RUN apt-get install git
+RUN apt-get install vim -y
+
